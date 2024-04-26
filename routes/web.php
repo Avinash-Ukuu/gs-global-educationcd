@@ -15,12 +15,15 @@ use App\Http\Controllers\ProfileController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-// Route::get('home', function () {
+// Route::get('/', function () {
 //     return view('home');
 // });
+Route::get('/', function () {
+    return view('index');
+});
+Route::get('thank-you', function () {
+    return view('thankyou');
+})->name('thankyou');
 
 Route::post('/enquiry/submit',[EnquiryController::class,'insert'])->name('enquirySubmit');
 // Route::get('/dashboard', function () {
