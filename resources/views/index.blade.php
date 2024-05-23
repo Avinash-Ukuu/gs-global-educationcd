@@ -470,7 +470,7 @@
 
                         <label for="mobile">Number</label>&nbsp;<span style="color: red">*</span>
                         <div class="inputContainer">
-                            <input type="tel" name="number" id="phone" placeholder="Your Mobile Number">
+                            <input type="tel" name="number" id="phonePopup" placeholder="Your Mobile Number">
                         </div>
 
                         <label for="message">Message</label>&nbsp;<span style="color: red">*</span>
@@ -647,7 +647,7 @@
                 success: function(response) {
                     if (response == 'true') {
                         $('#loader').css('display', 'none');
-                        location.reload();
+                        
                         window.open("{{ route('thankyou') }}", '_blank');
                     }
                 },
