@@ -20,7 +20,7 @@ use App\Http\Controllers\ProfileController;
 // });
 Route::get('/', function () {
     return view('index');
-});
+})->name('home');
 Route::get('thank-you', function () {
     return view('thankyou');
 })->name('thankyou');
