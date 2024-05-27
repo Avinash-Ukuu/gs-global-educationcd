@@ -184,6 +184,9 @@
         .signup-text a{
             color: #4a77d4
         }
+        .error-custom{
+            color:crimson
+        }
     </style>
 </head>
 
