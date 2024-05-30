@@ -8,9 +8,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
     <link rel="stylesheet" href="{{ asset('assets/frontend/styles/index.css') }}">
     <title>Gs Global Education</title>
+    <!-- Google Tag Manager -->
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-M7GMB5MC');
+    </script>
+    <!-- End Google Tag Manager -->
 </head>
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M7GMB5MC" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <main>
         <section class="banner">
             <header>
@@ -337,7 +359,8 @@
 
                             <label for="mobile">Number</label>&nbsp;<span style="color: red">*</span>
                             <div class="inputContainer">
-                                <input type="tel" name="number" id="phone" placeholder="Your Mobile Number">
+                                <input type="tel" name="number" id="phone"
+                                    placeholder="Your Mobile Number">
                             </div>
 
                             <label for="message">Message</label>&nbsp;<span style="color: red">*</span>
@@ -346,7 +369,8 @@
                             </div>
                             <div class="concentMain">
                                 <input class="checkbox" type="checkbox" name="contactConsent" id="checkConsent">
-                                <label class="checkparah" for="checkConsent">By submitting this enquiry I agree to be contacted in the
+                                <label class="checkparah" for="checkConsent">By submitting this enquiry I agree to be
+                                    contacted in the
                                     most suitable manner (by phone or email) in order to respond to my
                                     enquiry.</label>
                             </div>
@@ -418,7 +442,7 @@
             </div>
         </section>
 
-        <div class="popup" style="display: none" >
+        <div class="popup" style="display: none">
             <div class="container">
                 <div class="popupmain">
 
@@ -453,44 +477,47 @@
                             <input class="submit_button" type="submit" value="Submit">
                         </form>
                     </div> --}}
-                    <div class="form" >
-                    <form class="enquiry-form" autocomplete="off">
-                        <a href="javascript:void(0)" class="close-btn">×</a>
-                        @csrf
-                        <input type="hidden" name="honeyspot">
-                        <label for="name">Your Name</label> &nbsp;<span style="color: red">*</span>
-                        <div class="inputContainer">
-                            <input type="text" name="name" placeholder="Your Name">
-                        </div>
+                    <div class="form">
+                        <form class="enquiry-form" autocomplete="off">
+                            <a href="javascript:void(0)" class="close-btn">×</a>
+                            @csrf
+                            <input type="hidden" name="honeyspot">
+                            <label for="name">Your Name</label> &nbsp;<span style="color: red">*</span>
+                            <div class="inputContainer">
+                                <input type="text" name="name" placeholder="Your Name">
+                            </div>
 
-                        <label for="email">Email</label>&nbsp;<span style="color: red">*</span>
-                        <div class="inputContainer">
-                            <input type="email" name="email" placeholder="Email">
-                        </div>
+                            <label for="email">Email</label>&nbsp;<span style="color: red">*</span>
+                            <div class="inputContainer">
+                                <input type="email" name="email" placeholder="Email">
+                            </div>
 
-                        <label for="mobile">Number</label>&nbsp;<span style="color: red">*</span>
-                        <div class="inputContainer">
-                            <input type="tel" name="number" id="phonePopup" placeholder="Your Mobile Number">
-                        </div>
+                            <label for="mobile">Number</label>&nbsp;<span style="color: red">*</span>
+                            <div class="inputContainer">
+                                <input type="tel" name="number" id="phonePopup"
+                                    placeholder="Your Mobile Number">
+                            </div>
 
-                        <label for="message">Message</label>&nbsp;<span style="color: red">*</span>
-                        <div class="inputContainer">
-                            <textarea name="message" placeholder="Message"></textarea>
-                        </div>
-                        <div class="concentMain">
-                            <input class="checkbox" type="checkbox" name="contactConsent" id="checkConsentPopup">
-                            <label class="checkparah" for="checkConsentPopup">By submitting this enquiry I agree to be contacted in the
-                                most suitable manner (by phone or email) in order to respond to my
-                                enquiry.</label>
-                        </div>
-                        <p id="contact-consent"
-                            style="transform: translateX(20px);
+                            <label for="message">Message</label>&nbsp;<span style="color: red">*</span>
+                            <div class="inputContainer">
+                                <textarea name="message" placeholder="Message"></textarea>
+                            </div>
+                            <div class="concentMain">
+                                <input class="checkbox" type="checkbox" name="contactConsent"
+                                    id="checkConsentPopup">
+                                <label class="checkparah" for="checkConsentPopup">By submitting this enquiry I agree
+                                    to be contacted in the
+                                    most suitable manner (by phone or email) in order to respond to my
+                                    enquiry.</label>
+                            </div>
+                            <p id="contact-consent"
+                                style="transform: translateX(20px);
                         margin-bottom:0;margin-top:20px;color:red;display:none;">
-                            We
-                            cannot submit your enquiry without contact consent</p>
-                        <input class="submit_button" type="submit" value="Submit">
-                    </form>
-                </div>
+                                We
+                                cannot submit your enquiry without contact consent</p>
+                            <input class="submit_button" type="submit" value="Submit">
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -642,12 +669,15 @@
             var route = "{{ route('enquirySubmit') }}";
             $.ajax({
                 url: route,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
                 type: 'POST',
                 data: formData,
                 success: function(response) {
                     if (response == 'true') {
                         $('#loader').css('display', 'none');
-                        
+
                         window.open("{{ route('thankyou') }}", '_blank');
                     }
                 },
