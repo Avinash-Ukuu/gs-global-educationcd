@@ -22,7 +22,7 @@ class EnquiryController extends Controller
             $model->message             =       $inputs['message'];
             $model->contact_consent     =       ($inputs['contactConsent']=='on'? 1 :0);
             $model->save();
-            Mail::to('gsglobaleducation@gmail.com')->send(new EnquiryMail($model));
+            // Mail::to('gsglobaleducation@gmail.com')->send(new EnquiryMail($model));
             return 'true';
         }
         return 'failed';
