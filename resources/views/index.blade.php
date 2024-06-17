@@ -45,6 +45,15 @@
         })(window, document, 'script', 'dataLayer', 'GTM-5LCDGPKH');
     </script>
     <!-- End Google Tag Manager -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16585011640"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'AW-16585011640');
+    </script>
 </head>
 
 <body>
